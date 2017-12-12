@@ -1,45 +1,42 @@
 body {
     background-color: #ffffff;
     font-family: sans-serif;
+    font-size: 20px;
 }
 
 .container {
     background-color: #a27284;
+    margin: 0 auto;
+    width: 400px;
+    height: 500px;
 }
 
 .row {
     height: 100px;
-    margin: 10px;
+    margin: auto;
+    padding-top: 20px;
+    padding-right: 10px;
 }
 
-.button {
-    font-size: 16px;
-    font-weight: bold;
-    margin: auto;
-    color: black;
-    position: absolute;
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    border-radius: 8px;
-
-}
-
-.leftbutton {
-    font-size: 16px;
-    font-weight: bold;
-    color: black;
-    position: absolute;
-    display: inline-block;
-    width: 100px;
-    height: 50px;
-    margin: auto;
-    border-radius: 8px;
+.Absolute-Center {
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
 }
 
 .screen {
-    background: #ffffff;
-    border: 1px solid gray;
-    height: 80px;
-    border-radius: 8px;
+    background-color: #ffffff;
+    height: 50px;
+    margin: auto;
+    top: 0; left: 0; bottom: 0; right: 0;
+}
+
+.button {
+    width: 50px;
+    height: 50px;
+}
+
+.leftbutton {
+    width: 75px;
+    height: 50px;
 }
