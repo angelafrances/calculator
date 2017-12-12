@@ -1,0 +1,45 @@
+body {
+    background-color: #ffffff;
+    font-family: sans-serif;
+}
+
+.container {
+    background-color: #a27284;
+}
+
+.row {
+    height: 100px;
+    margin: 10px;
+}
+
+.button {
+    font-size: 16px;
+    font-weight: bold;
+    margin: auto;
+    color: black;
+    position: absolute;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+
+}
+
+.leftbutton {
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    position: absolute;
+    display: inline-block;
+    width: 100px;
+    height: 50px;
+    margin: auto;
+    border-radius: 8px;
+}
+
+.screen {
+    background: #ffffff;
+    border: 1px solid gray;
+    height: 80px;
+    border-radius: 8px;
+}
