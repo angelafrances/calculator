@@ -1,7 +1,4 @@
-
 var keys = document.querySelectorAll("#button");
-var operators = ['+', '-', 'x', '÷'];
-var decimalAdded = false;
 
 
 for (var i = 0; i < keys.length; i++) {
@@ -13,53 +10,18 @@ for (var i = 0; i < keys.length; i++) {
 
 
 		if (btnVal == 'CE') {
-			input.innerHTML = '0';
-			decimalAdded = false;
+			input.innerHTML = '';
 		}
 
 
 		else if (btnVal == '=') {
 			var equation = inputVal;
 			var lastChar = equation[equation.length - 1];
-			//in equation variable, grab inputVal which is everything inside of input.innerHTML & then make equation.length - 1 leaves just the equation without the = sign
-			
 			input.innerHTML = eval(equation);
-			decimalAdded = false;
-
 		}
 
-
-		else if (operators.indexOf(btnVal) > -1) {
-
-
-			var lastChar = inputVal[inputVal.length - 1];
-
-			if (inputVal != '' && operators.indexOf(lastChar) == -1)
-				input.innerHTML += btnVal;
-
-			else if (inputVal == '' && btnVal == '-')
-				input.innerHTML += btnVal;
-
-
-			if (operators.indexOf(lastChar) > -1 && inputVal.length > 1) {
-
-				input.innerHTML = inputVal.replace(/.$/, btnVal);
-			}
-
-			decimalAdded = false;
-		}
-
-
-		else if (btnVal == '.') {
-			if (!decimalAdded) {
-				input.innerHTML += btnVal;
-				decimalAdded = true;
-			}
-		}
-				
 		else if (btnVal == 'C') {
 			input.innerHTML -= btnVal;
-			// console.log(inputVal);
 			var backspace = inputVal;
 			input.innerHTML = backspace.substring(0, backspace.length - 1);
 		}
@@ -67,8 +29,8 @@ for (var i = 0; i < keys.length; i++) {
 
 		else {
 			input.innerHTML += btnVal;
-		}
 
+		}
 
 		calculate.preventDefault();
 	}
