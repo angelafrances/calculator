@@ -24,22 +24,22 @@ for (var i = 0; i < keys.length; i++) {
 			var backspace = inputVal;
 			input.innerHTML = backspace.substring(0, backspace.length - 1);
 		}
-		
+
 		else if (btnVal == 'MC') {
 			memory = 0;
 			console.log(memory);
 		}
-		
+
 		else if (btnVal == 'MA') {
 			memory += parseInt(inputVal);
 			console.log(memory);
 		}
-		
+
 		else if (btnVal == 'MS') {
 			memory -= parseInt(inputVal);
 			console.log(memory);
 		}
-		
+
 		else if (btnVal == 'MR') {
 			input.innerHTML = memory;
 		}
