@@ -58,12 +58,12 @@ for (var i = 0; i < keys.length; i++) {
 		}
 
 		else if (btnVal == 'MA') {
-			memory += parseInt(inputVal);
+			memory += parseFloat(inputVal);
 			console.log(memory);
 		}
 
 		else if (btnVal == 'MS') {
-			memory -= parseInt(inputVal);
+			memory -= parseFloat(inputVal);
 			console.log(memory);
 		}
 
