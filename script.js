@@ -1,9 +1,12 @@
 var keys = document.querySelectorAll("#button");
 var memory = 0;
+var num1;
+var num2;
+var sign;
 
 for (var i = 0; i < keys.length; i++) {
-	keys[i].onclick = function(calculate) {
 
+	keys[i].onclick = function(punch) {
 		var input = document.querySelector('.screen');
 		var inputVal = input.innerHTML;
 		var btnVal = this.innerHTML;
@@ -13,10 +16,33 @@ for (var i = 0; i < keys.length; i++) {
 			input.innerHTML = '';
 		}
 
+		else if (btnVal == '+') {
+			num1 = inputVal;
+			sign = btnVal;
+			input.innerHTML = '';
+		}
+
+		else if (btnVal == '-') {
+			num1 = inputVal;
+			sign = btnVal;
+			input.innerHTML = '';
+		}
+
+		else if (btnVal == '/') {
+			num1 = inputVal;
+			sign = btnVal;
+			input.innerHTML = '';
+		}
+
+		else if (btnVal == '*') {
+			num1 = inputVal;
+			sign = btnVal;
+			input.innerHTML = '';
+		}
+
 		else if (btnVal == '=') {
-			var equation = inputVal;
-			var lastChar = equation[equation.length - 1];
-			input.innerHTML = eval(equation);
+			num2 = inputVal;
+			calc();
 		}
 
 		else if (btnVal == 'C') {
@@ -28,6 +54,7 @@ for (var i = 0; i < keys.length; i++) {
 		else if (btnVal == 'MC') {
 			memory = 0;
 			console.log(memory);
+			input.innerHTML = '';
 		}
 
 		else if (btnVal == 'MA') {
@@ -44,12 +71,33 @@ for (var i = 0; i < keys.length; i++) {
 			input.innerHTML = memory;
 		}
 
-
 		else {
 			input.innerHTML += btnVal;
-
 		}
 
-		calculate.preventDefault();
+		punch.preventDefault();
 	}
+
+
+}
+
+function calc() {
+	if (sign == '+') {
+		var z = parseFloat(num1) + parseFloat(num2);
+		document.getElementById('screen').innerHTML = z;
+	}
+	else if (sign == '-') {
+		var z = parseFloat(num1) - parseFloat(num2);
+		document.getElementById('screen').innerHTML = z;
+	}
+	else if (sign == '*') {
+		var z = parseFloat(num1) * parseFloat(num2);
+		document.getElementById('screen').innerHTML = z;
+	}
+	else if (sign == '/') {
+		var z = parseFloat(num1) / parseFloat(num2);
+		document.getElementById('screen').innerHTML = z;
+	}
+
+
 }
