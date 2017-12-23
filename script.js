@@ -112,14 +112,14 @@ function calc() {
 		currNum = z;
 		sign = 0;
 	}
-	else if (sign == '*' && num1 > 0) {
+	else if (sign == '*' && num1 > 0 || num1 < 0) {
 		z = parseFloat(num1) * parseFloat(currNum);
 		document.getElementById('screen').innerHTML = z;
 		console.log(z);
 		currNum = z;
 		sign = 0;
 	}
-	else if (sign == '/' && num1 > 0) {
+	else if (sign == '/' && num1 > 0 || num1 < 0) {
 		z = parseFloat(num1) / parseFloat(currNum);
 		document.getElementById('screen').innerHTML = z;
 		console.log(z);
