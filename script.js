@@ -1,8 +1,9 @@
 var keys = document.querySelectorAll("#button");
 var memory = 0;
-var num1;
-var num2;
-var sign;
+var num1 = 0;
+var currNum = 0;
+var sign = 0;
+var z = 0;
 
 for (var i = 0; i < keys.length; i++) {
 
@@ -11,38 +12,52 @@ for (var i = 0; i < keys.length; i++) {
 		var inputVal = input.innerHTML;
 		var btnVal = this.innerHTML;
 
-
 		if (btnVal == 'CE') {
 			input.innerHTML = '';
+			currNum = 0;
+			num1 = 0;
 		}
 
 		else if (btnVal == '+') {
-			num1 = inputVal;
+			calc()
 			sign = btnVal;
-			input.innerHTML = '';
+			num1 = currNum;
+			console.log("now num1 is " + num1);
+			currNum = 0;
+			input.innerHTML += btnVal;
+
 		}
 
 		else if (btnVal == '-') {
-			num1 = inputVal;
+			calc()
 			sign = btnVal;
-			input.innerHTML = '';
+			num1 = currNum;
+			console.log("now num1 is " + num1);
+			currNum = 0;
+			input.innerHTML += btnVal;
 		}
 
 		else if (btnVal == '/') {
-			num1 = inputVal;
+			calc()
 			sign = btnVal;
-			input.innerHTML = '';
+			num1 = currNum;
+			console.log("now num1 is " + num1);
+			currNum = 0;
+			input.innerHTML += btnVal;
 		}
 
 		else if (btnVal == '*') {
-			num1 = inputVal;
+			calc()
 			sign = btnVal;
-			input.innerHTML = '';
+			num1 = currNum;
+			console.log("now num1 is " + num1);
+			currNum = 0;
+			input.innerHTML += btnVal;
 		}
 
 		else if (btnVal == '=') {
-			num2 = inputVal;
 			calc();
+			num1 = 0;
 		}
 
 		else if (btnVal == 'C') {
@@ -73,6 +88,7 @@ for (var i = 0; i < keys.length; i++) {
 
 		else {
 			input.innerHTML += btnVal;
+			currNum += btnVal;
 		}
 
 		punch.preventDefault();
@@ -83,21 +99,36 @@ for (var i = 0; i < keys.length; i++) {
 
 function calc() {
 	if (sign == '+') {
-		var z = parseFloat(num1) + parseFloat(num2);
+		z = parseFloat(num1) + parseFloat(currNum);
 		document.getElementById('screen').innerHTML = z;
+		console.log("the answer is " + z);
+		currNum = z;
+		sign = 0;
 	}
 	else if (sign == '-') {
-		var z = parseFloat(num1) - parseFloat(num2);
+		z = parseFloat(num1) - parseFloat(currNum);
+		document.getElementById('screen').innerHTML = z;
+		console.log(z);
+		currNum = z;
+		sign = 0;
+	}
+	else if (sign == '*' && num1 > 0) {
+		z = parseFloat(num1) * parseFloat(currNum);
+		document.getElementById('screen').innerHTML = z;
+		console.log(z);
+		currNum = z;
+		sign = 0;
+	}
+	else if (sign == '/' && num1 > 0) {
+		z = parseFloat(num1) / parseFloat(currNum);
+		document.getElementById('screen').innerHTML = z;
+		console.log(z);
+		currNum = z;
+		sign = 0;
+	}
+	else {
+		z = parseFloat(currNum);
 		document.getElementById('screen').innerHTML = z;
 	}
-	else if (sign == '*') {
-		var z = parseFloat(num1) * parseFloat(num2);
-		document.getElementById('screen').innerHTML = z;
-	}
-	else if (sign == '/') {
-		var z = parseFloat(num1) / parseFloat(num2);
-		document.getElementById('screen').innerHTML = z;
-	}
-
 
 }
