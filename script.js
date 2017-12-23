@@ -23,9 +23,8 @@ for (var i = 0; i < keys.length; i++) {
 			calc()
 			sign = btnVal;
 			num1 = currNum;
-			console.log("now num1 is " + num1);
-			currNum = 0;
 			input.innerHTML += btnVal;
+			currNum = 0;
 
 		}
 
@@ -33,27 +32,24 @@ for (var i = 0; i < keys.length; i++) {
 			calc()
 			sign = btnVal;
 			num1 = currNum;
-			console.log("now num1 is " + num1);
-			currNum = 0;
 			input.innerHTML += btnVal;
+			currNum = 0;
 		}
 
 		else if (btnVal == '/') {
 			calc()
 			sign = btnVal;
 			num1 = currNum;
-			console.log("now num1 is " + num1);
-			currNum = 0;
 			input.innerHTML += btnVal;
+			currNum = 0;
 		}
 
 		else if (btnVal == '*') {
 			calc()
 			sign = btnVal;
 			num1 = currNum;
-			console.log("now num1 is " + num1);
-			currNum = 0;
 			input.innerHTML += btnVal;
+			currNum = 0;
 		}
 
 		else if (btnVal == '=') {
@@ -101,30 +97,26 @@ for (var i = 0; i < keys.length; i++) {
 function calc() {
 	if (sign == '+') {
 		z = parseFloat(num1) + parseFloat(currNum);
-		document.getElementById('screen').innerHTML = z;
-		console.log("the answer is " + z);
-		currNum = z;
+		document.getElementById('screen').innerHTML = Math.round(z * 10000) / 10000;
+		currNum = Math.round(z * 10000) / 10000;
 		sign = 0;
 	}
 	else if (sign == '-') {
 		z = parseFloat(num1) - parseFloat(currNum);
-		document.getElementById('screen').innerHTML = z;
-		console.log(z);
-		currNum = z;
+		document.getElementById('screen').innerHTML = Math.round(z * 10000) / 10000;
+		currNum = Math.round(z * 10000) / 10000;
 		sign = 0;
 	}
 	else if (sign == '*' && num1 > 0 || num1 < 0) {
 		z = parseFloat(num1) * parseFloat(currNum);
-		document.getElementById('screen').innerHTML = z;
-		console.log(z);
-		currNum = z;
+		document.getElementById('screen').innerHTML = Math.round(z * 10000) / 10000;
+		currNum = Math.round(z * 10000) / 10000;
 		sign = 0;
 	}
 	else if (sign == '/' && num1 > 0 || num1 < 0) {
 		z = parseFloat(num1) / parseFloat(currNum);
-		document.getElementById('screen').innerHTML = z;
-		console.log(z);
-		currNum = z;
+		document.getElementById('screen').innerHTML = Math.round(z * 10000) / 10000;
+		currNum = Math.round(z * 10000) / 10000;
 		sign = 0;
 	}
 	else {
