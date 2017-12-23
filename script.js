@@ -100,28 +100,28 @@ for (var i = 0; i < keys.length; i++) {
 function calc() {
 	if (sign == '+') {
 		z = parseFloat(num1) + parseFloat(currNum);
-		document.getElementById('screen').innerHTML = z;
+		document.getElementById('screen').innerHTML = parseFloat(z).toFixed(4);
 		console.log("the answer is " + z);
 		currNum = z;
 		sign = 0;
 	}
 	else if (sign == '-') {
 		z = parseFloat(num1) - parseFloat(currNum);
-		document.getElementById('screen').innerHTML = z;
+		document.getElementById('screen').innerHTML = parseFloat(z).toFixed(4);
 		console.log(z);
 		currNum = z;
 		sign = 0;
 	}
 	else if (sign == '*' && num1 > 0 || num1 < 0) {
 		z = parseFloat(num1) * parseFloat(currNum);
-		document.getElementById('screen').innerHTML = z;
+		document.getElementById('screen').innerHTML = parseFloat(z).toFixed(4);
 		console.log(z);
 		currNum = z;
 		sign = 0;
 	}
 	else if (sign == '/' && num1 > 0 || num1 < 0) {
 		z = parseFloat(num1) / parseFloat(currNum);
-		document.getElementById('screen').innerHTML = z;
+		document.getElementById('screen').innerHTML = parseFloat(z).toFixed(4);
 		console.log(z);
 		currNum = z;
 		sign = 0;
@@ -129,6 +129,7 @@ function calc() {
 	else {
 		z = parseFloat(currNum);
 		document.getElementById('screen').innerHTML = z;
+		sign = 0;
 	}
 
 }
